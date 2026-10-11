@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Telemetry Forecasting | Natasha Agarwal</title>
+<meta name="description" content="Live IoT tank readings existed, but nobody used them until it was too late. A forecasting system that got B2B industrial gas partners to zero unplanned runouts.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-case-id="telemetry-forecasting">
+
+<header>
+  <div class="name"><a href="../index.html" style="text-decoration:none;color:inherit;">NATASHA AGARWAL<span class="dot">.</span></a></div>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../index.html#how-i-work">How I Work</a>
+    <a href="../index.html#agents">Agents</a>
+    <a href="../about.html">About</a>
+    <a class="nav-cta" href="../contact.html">Let's Talk</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <a class="back-link" href="../index.html#work">← All work</a>
+
+  <section class="case-hero">
+    <div class="case-tag">Industrial B2B / IoT · Shipped</div>
+    <h1 class="case-title">Telemetry Forecasting for Gas-Tank Runouts</h1>
+    <p class="case-dek">Live IoT tank readings existed. Nobody was using them to make decisions until it was too late.</p>
+
+    <div class="case-meta">
+      <div><b>Tools</b>Claude Code · Vite · Vercel</div>
+      <div><b>Data source</b>IoT tank telemetry, industrial gas distribution</div>
+    </div>
+  </section>
+
+
+  <div class="ba-compare">
+    <div class="ba-col before">
+      <div class="ba-tag">Before</div>
+      <p>A static 20% tank-level threshold alert, the obvious fix, and the wrong one. It means something different at every site.</p>
+    </div>
+    <div class="ba-arrow">→</div>
+    <div class="ba-col after">
+      <div class="ba-tag">After</div>
+      <p>A forecasting model for data-rich sites and conservative manual thresholds for sparse ones, shipped simultaneously. Zero unplanned runouts.</p>
+    </div>
+  </div>
+
+  <div class="ledger">
+
+    <div class="ledger-block">
+      <div class="ledger-label">01 · The Surface Ask</div>
+      <h3>The sensors were already streaming the answer</h3>
+      <p>B2B industrial gas partners had IoT sensors on their tanks streaming live readings, and they were still running out of gas. The data existed. The problem was that nobody was using it to make decisions until it was too late.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">02 · What Made It Hard</div>
+      <h3>The obvious fix, a threshold alert, was the wrong fix</h3>
+      <p>The obvious first instinct was a threshold alert: set a trigger at 20% tank level, fire a delivery order. I almost went with that. The reason I didn't: 20% means something completely different at a manufacturing site running three shifts than at a smaller partner closed on weekends.</p>
+      <p class="pull">A static threshold would either send deliveries too early and blow up logistics costs, or miss sites with high consumption variance and still have runouts.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">03 · The Decision</div>
+      <h3>This was a forecasting problem, not an alerting problem</h3>
+      <p>I spent three weeks in delivery operations data before writing a single spec. The pattern was clear: every runout happened when consumption had deviated from historical average during a period nobody was watching live readings. The real problem wasn't the data, it was that the delivery calendar was built on fixed schedules, not actual consumption patterns. Some sites used three times more gas in winter. Some spiked during peak business periods. Neither the calendar nor a static threshold knew that.</p>
+      <p>That told me exactly what the system needed to output: not "this tank is low," but "this specific site will hit empty in X days, given its pattern and lead time." One requirement ruled out the rules-based approach before engineering wrote a line of code.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">04 · The Trade-off I Owned</div>
+      <h3>Shipping the imperfect version instead of waiting for perfect data</h3>
+      <p>Not every site had rich data. Some had two years of readings, others were recently onboarded. I shipped two versions simultaneously: data-rich sites got model-driven thresholds, sparse sites got conservative manual thresholds with a larger safety buffer and an earlier trigger. We'd over-order at sparse sites for a few months while accumulating data. The alternative was waiting for perfect coverage before shipping anything, and I chose shipping the imperfect version over waiting for the perfect one.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">05 · The Result</div>
+      <h3>Zero runouts, without waiting for perfect data</h3>
+      <div class="result-banner">
+        <div class="lbl">Impact</div>
+        <div class="val">Zero unplanned runout incidents across all telemetry-enabled sites.</div>
+      </div>
+      <p style="margin-top:20px;">Partners never went offline, and the business retained the relationships because the system was invisible until it was needed, partners didn't get an alert, they just never ran out. Emergency delivery costs dropped because the model caught sites before they hit critical, and the delivery routing team had predictable schedules for the first time instead of reacting to emergency calls. The thing I'm most proud of: we got to zero runouts without waiting for perfect data. If we'd waited for full coverage, we'd have had runouts while we were waiting.</p>
+    </div>
+
+  </div>
+
+    <div class="related-work">
+    <div class="related-work-label">You might also like</div>
+    <div class="related-grid" data-related-work></div>
+  </div>
+
+<div class="case-cta">
+    <h3>Like what you see?</h3>
+    <p>I'm looking for Senior AI Product Manager roles where the product ships to people who depend on it.</p>
+    <a class="btn primary" href="../contact.html">Let's talk →</a>
+  </div>
+
+  <div class="case-nav">
+    <a href="support-deflection-agent.html">← Support Deflection Agent</a>
+    <a class="next" href="ai-onboarding-agent.html">Next: AI Onboarding Agent →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h2>If the stakes are real, let's talk.</h2>
+      <p>Open to Senior AI Product Manager roles where the product ships to people who depend on it.</p>
+      <div class="footer-links">
+        <a href="../about.html">About</a>
+        <a href="../books.html">Books</a>
+        <a href="../testimonials.html">Testimonials</a>
+        <a href="../contact.html">Contact</a>
+        <a href="mailto:natasha.agarwal.254@gmail.com">Email</a>
+        <a href="http://www.linkedin.com/in/natasha1agarwal" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://drive.google.com/file/d/16q6CAsI4wkckho32H79r2ci5qpHesmND/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-meta">NATASHA AGARWAL · PRODUCT, BUILT AND MEASURED</div>
+</footer>
+
+<script src="../js/showcase.js"></script>
+</body>
+</html>

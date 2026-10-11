@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Invoice Automation | Natasha Agarwal</title>
+<meta name="description" content="Rebuilt an invoice processing system from 38% to 91% straight-through processing in eight weeks, by defining what a clean invoice looks like before touching the technology.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-case-id="invoice-automation">
+
+<header>
+  <div class="name"><a href="../index.html" style="text-decoration:none;color:inherit;">NATASHA AGARWAL<span class="dot">.</span></a></div>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../index.html#how-i-work">How I Work</a>
+    <a href="../index.html#agents">Agents</a>
+    <a href="../about.html">About</a>
+    <a class="nav-cta" href="../contact.html">Let's Talk</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <a class="back-link" href="../index.html#work">← All work</a>
+
+  <section class="case-hero">
+    <div class="case-tag">Industrial B2B · Shipped</div>
+    <h1 class="case-title">Invoice Automation: 38% → 91% Straight-Through Processing</h1>
+    <p class="case-dek">Rebuilt an invoice processing system in eight weeks by defining what a "clean invoice" actually meant before touching the technology.</p>
+
+    <div class="case-meta">
+      <div><b>Timeframe</b>8 weeks</div>
+      <div><b>Tools</b>AI extraction · Azure pipeline · confidence scoring</div>
+      <div><b>Mid-flight</b>Migrated extraction vendor, Nanonets → Azure, without dropping STP</div>
+    </div>
+  </section>
+
+
+  <div class="ba-compare">
+    <div class="ba-col before">
+      <div class="ba-tag">Before</div>
+      <p>38% straight-through processing, one undifferentiated exception queue that skilled people triaged by hand all day.</p>
+    </div>
+    <div class="ba-arrow">→</div>
+    <div class="ba-col after">
+      <div class="ba-tag">After</div>
+      <p>91% STP with three-bucket routing (auto-post, quick-review, true exception) and a finance-owned tolerance dial.</p>
+    </div>
+  </div>
+
+  <div class="ledger">
+
+    <div class="ledger-block">
+      <div class="ledger-label">01 · The Surface Ask</div>
+      <h3>Thousands of invoices, one undifferentiated queue</h3>
+      <p>Thousands of supplier invoices arrived in inconsistent formats. The accounts payable team manually keyed most of them, and every mismatch between invoice, PO, and receipt meant a human chased it down. Straight-through processing sat at 38%. Cost per invoice was high, and error rates were higher.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">02 · What Made It Hard</div>
+      <h3>Everyone was solving the wrong problem</h3>
+      <p>Everyone framed this as an extraction accuracy problem. It wasn't. Extraction was already decent.</p>
+      <p class="pull">The real cost driver was exception handling: every invoice that fell out of the happy path landed in one undifferentiated queue, and skilled people spent their day triaging noise.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">03 · The Decision</div>
+      <h3>Confidence scoring, three buckets, one adjustable dial</h3>
+      <p>I designed a pipeline around confidence scoring and three-bucket exception routing: auto-post, quick-review, and true exceptions. Instead of a fixed matching threshold, I shipped a 2% variance tolerance as an adjustable dial the finance team controls. Every automated decision carries an audit trace, and corrections feed a learning loop, so the system improves on the invoices it got wrong.</p>
+      <figure class="case-figure">
+        <img src="../images/case-studies/invoice-architecture.png" alt="Architecture diagram: invoice inputs feed an AI extraction layer, then a six-check validation engine, then route to straight-through, human review, or auto-reject">
+        <figcaption>The architecture: extraction → six-check validation engine → route to straight-through, review, or reject</figcaption>
+      </figure>
+      <figure class="case-figure">
+        <img src="../images/case-studies/invoice-decision-ledger.png" alt="Decision ledger: the obvious move was to chase 100% automation by tightening the threshold; first principles said the cost lived in exception-handling minutes; the call was to make tolerance a business dial, not an engineering constant">
+        <figcaption>The obvious move vs. what first principles said vs. the call I made</figcaption>
+      </figure>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">04 · The Trade-off I Owned</div>
+      <h3>AI extraction over the safer rules engine</h3>
+      <p>The safe option was rules-based: engineering preferred it, the client's finance team preferred it. My argument: we had 40+ vendors with zero invoice standardization, and a rules engine breaks every time a vendor changes their template. The trade-off I accepted was lower initial trust from stakeholders and harder-to-explain failures. I underestimated how much the "black box" concern would slow adoption, and had to build explicit confidence signals before finance would trust routing decisions they couldn't inspect.</p>
+      <p>Delivered in eight weeks, including migrating the extraction layer from Nanonets to an Azure-based pipeline mid-flight without dropping STP. I wrote the specs, defined the API contracts, and sat in the eval reviews myself.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">05 · The Result</div>
+      <h3>38% to 91%, and a system that keeps improving</h3>
+      <div class="result-banner">
+        <div class="lbl">Impact</div>
+        <div class="val">Straight-through processing went from 38% to 91% in eight weeks, by defining what a clean invoice looks like before touching the technology.</div>
+      </div>
+      <div class="mini-stats">
+        <div class="mini-stat"><div class="val">91%</div><div class="lbl">STP, up from 38%</div></div>
+        <div class="mini-stat"><div class="val">8 wks</div><div class="lbl">Concept to production</div></div>
+        <div class="mini-stat"><div class="val">90%+</div><div class="lbl">Invoice digitalization</div></div>
+        <div class="mini-stat"><div class="val">100%</div><div class="lbl">Decisions audit-traced</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <details class="deep-dive">
+    <summary>The full decision-by-decision breakdown</summary>
+    <div class="deep-dive-body">
+      <p style="color:var(--ink-dim); font-size:14px; padding-top:22px;">The surface ask was: replace the third-party extraction tool. The real problem was that nobody had ever formally defined what a clean invoice looks like, and the old tool had its own exception taxonomy baked into a black box that was wrong for this context. That had to be answered before a single line of code was written.</p>
+
+      <div class="decision">
+        <div class="d-num">Decision 1</div>
+        <h4>AI extraction over a rules engine</h4>
+        <p>I chose an AI extraction layer over a rules engine. The AI layer generalizes across formats and improves as it sees more invoices; a rules engine breaks every time a vendor changes their template. What I was wrong about initially: I underestimated how much the "black box" concern would slow adoption. I had to build explicit confidence signals, an extraction confidence score and a raw text view, before the finance team would trust routing decisions they couldn't inspect.</p>
+      </div>
+
+      <div class="decision">
+        <div class="d-num">Decision 2</div>
+        <h4>Defined the validation criteria before the exception logic</h4>
+        <p>I wrote six validation checks, mandatory fields, vendor master, PO match, line item reconciliation, tax compliance, duplicate check, before anyone touched exception routing. The instinct was to replicate what the old tool flagged. I pushed back: replicating the old logic replicates the old problems. Defining "clean" from first principles added two weeks of discovery work, but gave us a shared language once we built the exception logic.</p>
+      </div>
+
+      <div class="decision">
+        <div class="d-num">Decision 3</div>
+        <h4>The 2% tolerance threshold</h4>
+        <p>I didn't set the tolerance threshold. I sat with the client's finance and accounting team and asked what level of discrepancy they could accept the system deciding on, versus what needed a human. We started at 1%, too conservative, the review queue was still overwhelming. We loosened it to 2% at week four as extraction accuracy proved out, and I built it as a configurable dial, not a hardcoded rule.</p>
+        <span class="tag-blind">Blind spot</span>
+        <p>I initially thought the threshold was a technical parameter. It's actually a trust parameter: the right number is wherever the finance team stops second-guessing the system.</p>
+      </div>
+
+      <div class="decision">
+        <div class="d-num">Decision 4</div>
+        <h4>Three buckets, not two</h4>
+        <p>Most teams build two buckets: approved and needs review. I built three: auto-correct, human review, auto-reject. The auto-correct bucket, vendor name variants, date formatting, PO number spacing, prevented hundreds of invoices from landing in the human queue for reasons that were noise, not signal.</p>
+        <span class="tag-blind">Blind spot</span>
+        <p>I almost didn't build the auto-correct layer, engineering pushed back on complexity. What changed my mind was watching the finance team spend twenty minutes hunting an invoice that had been mis-filed because "Microsoft Corp" didn't match "Microsoft Corporation."</p>
+      </div>
+
+      <div class="decision">
+        <div class="d-num">Decision 5</div>
+        <h4>The weekly eval loop</h4>
+        <p>I made exception rate, not STP rate, the primary metric. Optimizing for STP rate incentivizes loosening tolerances and pushing borderline invoices through; tracking exceptions by type and vendor shows where the system is actually failing. Salesforce was generating 40% of the human review queue. That told me their invoice format had something unusual. One custom normalization rule moved STP eight points in a single week.</p>
+      </div>
+
+      <div class="decision">
+        <div class="d-num">Blind spots found after shipping</div>
+        <h4>Three things I got wrong along the way</h4>
+        <p><strong>Vendor-facing language:</strong> I designed rejection reasons for the finance team, clear and auditable, but they also go back to vendors. "Line item variance 3.04% exceeds 2% tolerance against PO-2024-003" means nothing to a vendor's accounts payable team. I rewrote the rejection language mid-build after the first vendor called confused.</p>
+        <p><strong>Goods receipt as a hard dependency:</strong> I initially made goods receipt confirmation a fatal check. Invoices routinely arrive before the warehouse team processes the receipt, so this was auto-rejecting completely normal invoices. I demoted it to a soft check after three false rejections in week one.</p>
+        <p><strong>The missing "why":</strong> the first version showed finance managers that exceptions existed, not why. I watched a finance manager spend twenty minutes hunting one invoice. Adding the rejection reason and queue age was a requirement written in an afternoon, and it cut average exception resolution time by 60%.</p>
+      </div>
+
+      <div class="decision">
+        <div class="d-num">What I'd do differently</div>
+        <h4>Start with the vendors, not just finance</h4>
+        <p>I'd run a vendor survey before defining the rejection taxonomy. The vendors are upstream of this system, and I treated them as downstream. Getting two or three vendors on a call in week one, asking what they'd actually need to know to fix a rejection, would have saved two iterations on the rejection message format. I'd also instrument the auto-correct layer from day one. By week six I had no visibility into how many vendor name variants were being silently corrected, and that data would have told me much earlier which vendors needed format guidance.</p>
+      </div>
+    </div>
+  </details>
+
+  <div class="related-work">
+    <div class="related-work-label">You might also like</div>
+    <div class="related-grid" data-related-work></div>
+  </div>
+
+  <div class="case-cta">
+    <h3>Like what you see?</h3>
+    <p>I'm looking for Senior AI Product Manager roles where the product ships to people who depend on it.</p>
+    <a class="btn primary" href="../contact.html">Let's talk →</a>
+  </div>
+
+  <div class="case-nav">
+    <a href="../index.html#work">← All work</a>
+    <a class="next" href="support-deflection-agent.html">Next: Support Deflection Agent →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h2>If the stakes are real, let's talk.</h2>
+      <p>Open to Senior AI Product Manager roles where the product ships to people who depend on it.</p>
+      <div class="footer-links">
+        <a href="../about.html">About</a>
+        <a href="../books.html">Books</a>
+        <a href="../testimonials.html">Testimonials</a>
+        <a href="../contact.html">Contact</a>
+        <a href="mailto:natasha.agarwal.254@gmail.com">Email</a>
+        <a href="http://www.linkedin.com/in/natasha1agarwal" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://drive.google.com/file/d/16q6CAsI4wkckho32H79r2ci5qpHesmND/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-meta">NATASHA AGARWAL · PRODUCT, BUILT AND MEASURED</div>
+</footer>
+
+<script src="../js/showcase.js"></script>
+</body>
+</html>

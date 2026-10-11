@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Onboarding Agent | Natasha Agarwal</title>
+<meta name="description" content="AI where ambiguity lives, determinism where money and compliance move. A conversational onboarding layer over a shipped, deterministic wizard.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-case-id="ai-onboarding-agent">
+
+<header>
+  <div class="name"><a href="../index.html" style="text-decoration:none;color:inherit;">NATASHA AGARWAL<span class="dot">.</span></a></div>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../index.html#how-i-work">How I Work</a>
+    <a href="../index.html#agents">Agents</a>
+    <a href="../about.html">About</a>
+    <a class="nav-cta" href="../contact.html">Let's Talk</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <a class="back-link" href="../index.html#work">← All work</a>
+
+  <section class="case-hero">
+    <div class="case-tag">Industrial B2B · Prototype</div>
+    <h1 class="case-title">AI Onboarding Agent</h1>
+    <p class="case-dek">AI where ambiguity lives. Determinism where money and compliance move. The agent proposes and pre-fills, it never bypasses the wizard.</p>
+
+    <div class="case-meta">
+      <div><b>Tools</b>Vite · React 19 · Tailwind CSS</div>
+      <div><b>Built for</b>Avalara AI-Experience PM interview, and a live client pitch</div>
+      <div><b>Prototype</b><a href="https://ai-onboarding-agent-one.vercel.app/" target="_blank" rel="noopener">ai-onboarding-agent-one.vercel.app</a></div>
+    </div>
+  </section>
+
+
+  <div class="ba-compare">
+    <div class="ba-col before">
+      <div class="ba-tag">Before</div>
+      <p>Onboarding as a form to decode: industry, affiliation, cylinder sizes, service options, one field at a time.</p>
+    </div>
+    <div class="ba-arrow">→</div>
+    <div class="ba-col after">
+      <div class="ba-tag">After</div>
+      <p>Conversational intake that pre-fills the same deterministic wizard, every AI guess editable, only the wizard can submit.</p>
+    </div>
+  </div>
+
+  <div class="ledger">
+
+    <div class="ledger-block">
+      <div class="ledger-label">01 · The Surface Ask</div>
+      <h3>Onboarding was a form to decode</h3>
+      <p>Onboarding as a customer of a B2B gas platform normally meant decoding a form: which industry, which bottler affiliation, which cylinder sizes, which service options. This prototype was the AI evolution of a shipped, deterministic onboarding system, the "shipped v1 → intelligent front end" motion, built as proof-of-work for an Avalara AI-Experience PM interview, and as a potential pitch for a client running a $46.4M GMV, 63,000+ customer-location platform.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">02 · What Made It Hard</div>
+      <h3>Replacing a form with a conversation, without losing the guardrails</h3>
+      <p>Replace form-decoding with a conversation, but keep the deterministic wizard as the single validated path to submit. The risk in AI-first onboarding is obvious: if the agent can guess wrong on a compliance field or a payment field, the business is exposed. The prototype had to prove the AI layer could help without ever being the thing that actually commits money or compliance decisions.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">03 · The Decision</div>
+      <h3>AI where ambiguity lives, determinism where money moves</h3>
+      <p class="pull">The wizard is the only thing that can submit. AI guesses are always editable; rule-derived guardrail fields, payment, pickup eligibility, are locked.</p>
+      <p>Three layers make this real. Conversational intake: chat resolves segment, affiliation, and urgency, then auto-fills the five-step wizard with confidence badges, every field editable or confirmable before a human-gated submit. Document intelligence: upload a prior invoice or license, extract, validate, and route by confidence, auto-accepting the clean majority and sending low-confidence rows to review. Onboarding intelligence: a learning loop from drop-off and exceptions, plus proactive stall detection, setup complete but no first order within five days triggers a diagnosed nudge or human escalation.</p>
+      <p>Confidence plus a human-confirm gate sits on every AI-prefilled field, the same confidence-gating pattern used in the <a href="invoice-automation.html" style="color:var(--accent); text-decoration:none;">invoice automation</a> and <a href="support-deflection-agent.html" style="color:var(--accent); text-decoration:none;">support agent</a> work. And on ambiguity, the agent asks one targeted question rather than guessing, and doesn't loop.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">04 · The Trade-off I Owned</div>
+      <h3>Mocked on purpose</h3>
+      <p>Deterministic, scripted responses make the stage demo reliable, cost nothing, leak no data, and are honestly labeled as such in the UI. The intelligence patterns, confidence gating, exception routing, the learning loop, are the point: they're proven in adjacent shipped products, and this prototype composes them onto onboarding rather than reinventing them from scratch.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">05 · The Result</div>
+      <h3>A reusable thesis, not just a demo</h3>
+      <div class="result-banner">
+        <div class="lbl">North-star metrics defined</div>
+        <div class="val">Self-service coverage, time-to-first-order by segment, translation-error rate, learning velocity, and guardrail health (the override rate on AI-prefilled fields).</div>
+      </div>
+      <p style="margin-top:20px;">Real domain rules are encoded end to end, segment routing across beverage, food manufacturing, medical/vet/dental, and industrial; will-call pickup cutoffs; card-payment-until-credit-approved, and the wizard submits into the same downstream systems as production: Salesforce, Business Central, Magento. The prototype's real output was a reusable pattern for where AI should sit relative to money and compliance, not just an onboarding demo.</p>
+    </div>
+
+  </div>
+
+    <div class="related-work">
+    <div class="related-work-label">You might also like</div>
+    <div class="related-grid" data-related-work></div>
+  </div>
+
+<div class="case-cta">
+    <h3>Like what you see?</h3>
+    <p>I'm looking for Senior AI Product Manager roles where the product ships to people who depend on it.</p>
+    <a class="btn primary" href="../contact.html">Let's talk →</a>
+  </div>
+
+  <div class="case-nav">
+    <a href="telemetry-forecasting.html">← Telemetry Forecasting</a>
+    <a class="next" href="ai-regression-intelligence.html">Next: AI Regression Intelligence →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h2>If the stakes are real, let's talk.</h2>
+      <p>Open to Senior AI Product Manager roles where the product ships to people who depend on it.</p>
+      <div class="footer-links">
+        <a href="../about.html">About</a>
+        <a href="../books.html">Books</a>
+        <a href="../testimonials.html">Testimonials</a>
+        <a href="../contact.html">Contact</a>
+        <a href="mailto:natasha.agarwal.254@gmail.com">Email</a>
+        <a href="http://www.linkedin.com/in/natasha1agarwal" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://drive.google.com/file/d/16q6CAsI4wkckho32H79r2ci5qpHesmND/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-meta">NATASHA AGARWAL · PRODUCT, BUILT AND MEASURED</div>
+</footer>
+
+<script src="../js/showcase.js"></script>
+</body>
+</html>

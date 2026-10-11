@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Behavioral Health RAG Platform | Natasha Agarwal</title>
+<meta name="description" content="A prompt-only LLM workflow hallucinated behavioral guidance and misread informal language. Rebuilt as retrieval-grounded generation over curated clinical sources.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-case-id="behavioral-health-rag">
+
+<header>
+  <div class="name"><a href="../index.html" style="text-decoration:none;color:inherit;">NATASHA AGARWAL<span class="dot">.</span></a></div>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../index.html#how-i-work">How I Work</a>
+    <a href="../index.html#agents">Agents</a>
+    <a href="../about.html">About</a>
+    <a class="nav-cta" href="../contact.html">Let's Talk</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <a class="back-link" href="../index.html#work">← All work</a>
+
+  <section class="case-hero">
+    <div class="case-tag">Behavioral Health · Prototype</div>
+    <h1 class="case-title">Multimodal RAG Platform for Behavioral Health</h1>
+    <p class="case-dek">A missed escalation here isn't a bug ticket, it's a clinical event. Rebuilt from a generic prompt workflow into grounded, auditable retrieval.</p>
+
+    <div class="case-meta">
+      <div><b>Tools</b>RAG · Chroma DB · OpenAI embeddings</div>
+      <div><b>Sources</b>Curated clinical guidance (WHO, UNICEF, NIMHANS), not open web retrieval</div>
+      <div><b>Evaluator prompt</b><a href="https://docs.google.com/document/d/1X9iOSzG2OVnYFbuzeb1TJWJALVs2YSPtR_GvdErSuPM/edit?usp=drive_link" target="_blank" rel="noopener">The LLM-as-judge eval prompt →</a></div>
+    </div>
+  </section>
+
+
+  <div class="ba-compare">
+    <div class="ba-col before">
+      <div class="ba-tag">Before</div>
+      <p>A prompt-only LLM workflow: inconsistent emotional interpretation, weak Hinglish/slang understanding, hallucinated guidance.</p>
+    </div>
+    <div class="ba-arrow">→</div>
+    <div class="ba-col after">
+      <div class="ba-tag">After</div>
+      <p>Retrieval-grounded generation over curated clinical sources with confidence-gated escalation. 61% → 79% classification consistency.</p>
+    </div>
+  </div>
+
+  <div class="ledger">
+
+    <div class="ledger-block">
+      <div class="ledger-label">01 · The Surface Ask</div>
+      <h3>Emotional classification and conversational guidance, from an LLM</h3>
+      <p>The platform started with a standard prompt-based LLM workflow for emotional classification and conversational guidance. It surfaced three problems fast: inconsistent emotional interpretation, weak understanding of Hinglish and youth slang, and hallucinated or unsupported behavioral guidance.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">02 · What Made It Hard</div>
+      <h3>Better prompting wasn't the fix</h3>
+      <p class="pull">We initially tried solving this through prompt refinement, but the model lacked grounded contextual understanding for the domain and audience. That's a different problem than a prompting problem.</p>
+      <p>Users write the way they actually talk, mixing English, Hindi, abbreviations, emojis, and emotional shorthand. A system that normalizes that input too aggressively loses the emotional context it needs to respond well; one that doesn't normalize it at all can't reliably parse intent.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">03 · The Decision</div>
+      <h3>Shift to retrieval-grounded generation</h3>
+      <p>We moved from pure generative behavior to retrieval-augmented generation, grounding every response in curated behavioral and emotional knowledge rather than the model's pretrained instincts. The architecture has five layers: document ingestion, user input processing, retrieval, contextual grounding, and response generation with classification.</p>
+      <p>Knowledge came from curated sources, not unrestricted web retrieval, chunked by behavioral meaning rather than document size: emotional patterns, escalation indicators, conversation guidance, behavioral recommendations, youth slang mappings, and clinical escalation rules each became their own semantically coherent chunk. A history-aware layer reformulates vague follow-ups into complete questions before querying, so multi-turn conversations retrieve accurately instead of treating every message as a cold start.</p>
+      <figure class="case-figure">
+        <img src="../images/case-studies/behavioral-rag-architecture.png" alt="RAG system architecture diagram: knowledge-base construction pipeline (source documents to chunking to embeddings to vector DB) and a separate retrieval pipeline (query to retriever to relevant chunks to LLM)">
+        <figcaption>The RAG system: knowledge-base construction (top) and the retrieval pipeline (bottom)</figcaption>
+      </figure>
+      <figure class="case-figure">
+        <img src="../images/case-studies/behavioral-rag-pipeline.png" alt="Ingestion pipeline diagram: articles, videos, PDFs, and text are chunked, embedded, and turned into auto-generated prompts and reports, refined through context engineering and iteration">
+        <figcaption>Document ingestion → chunking → embedding → context-engineered prompts → reports, with an iteration loop</figcaption>
+      </figure>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">04 · The Trade-off I Owned</div>
+      <h3>Confidence-gated escalation over unrestricted generation</h3>
+      <p>Certain emotional patterns or ambiguity levels trigger escalation recommendations instead of an open-ended AI response. That's a deliberate ceiling on what the system is allowed to improvise, in a domain where an overconfident answer carries real risk. The major improvement wasn't that the model got "smarter," it's that the system became more reliable and operationally predictable, which is the property that actually matters in this domain.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">05 · The Result</div>
+      <h3>A meaningful jump in classification consistency</h3>
+      <div class="result-banner">
+        <div class="lbl">Impact</div>
+        <div class="val">Classification consistency improved from 61% to 79% on the validation set, once responses stopped relying purely on generalized pretrained behavior.</div>
+      </div>
+    </div>
+
+  </div>
+
+    <div class="related-work">
+    <div class="related-work-label">You might also like</div>
+    <div class="related-grid" data-related-work></div>
+  </div>
+
+<div class="case-cta">
+    <h3>Like what you see?</h3>
+    <p>I'm looking for Senior AI Product Manager roles where the product ships to people who depend on it.</p>
+    <a class="btn primary" href="../contact.html">Let's talk →</a>
+  </div>
+
+  <div class="case-nav">
+    <a href="ai-regression-intelligence.html">← AI Regression Intelligence</a>
+    <a class="next" href="invoice-automation.html">Back to start: Invoice Automation →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h2>If the stakes are real, let's talk.</h2>
+      <p>Open to Senior AI Product Manager roles where the product ships to people who depend on it.</p>
+      <div class="footer-links">
+        <a href="../about.html">About</a>
+        <a href="../books.html">Books</a>
+        <a href="../testimonials.html">Testimonials</a>
+        <a href="../contact.html">Contact</a>
+        <a href="mailto:natasha.agarwal.254@gmail.com">Email</a>
+        <a href="http://www.linkedin.com/in/natasha1agarwal" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://drive.google.com/file/d/16q6CAsI4wkckho32H79r2ci5qpHesmND/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-meta">NATASHA AGARWAL · PRODUCT, BUILT AND MEASURED</div>
+</footer>
+
+<script src="../js/showcase.js"></script>
+</body>
+</html>

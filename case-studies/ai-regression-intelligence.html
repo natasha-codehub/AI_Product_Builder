@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Regression Intelligence | Natasha Agarwal</title>
+<meta name="description" content="Regression testing is the silent tax on every engineering team. A 6-agent pipeline that generates intent-aware tests and explains its own reasoning.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-case-id="ai-regression-intelligence">
+
+<header>
+  <div class="name"><a href="../index.html" style="text-decoration:none;color:inherit;">NATASHA AGARWAL<span class="dot">.</span></a></div>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../index.html#how-i-work">How I Work</a>
+    <a href="../index.html#agents">Agents</a>
+    <a href="../about.html">About</a>
+    <a class="nav-cta" href="../contact.html">Let's Talk</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <a class="back-link" href="../index.html#work">← All work</a>
+
+  <section class="case-hero">
+    <div class="case-tag">Dev Tooling · Prototype</div>
+    <h1 class="case-title">AI Regression Intelligence: Sentinel</h1>
+    <p class="case-dek">Regression testing is the silent tax on every engineering team. A 6-agent pipeline that understands intent, not just syntax.</p>
+
+    <div class="case-meta">
+      <div><b>Tools</b>Claude Sonnet 4.6 / Opus 4.7 · Python · React 18 · TypeScript · Tailwind · Vite</div>
+      <div><b>Target</b>PHPUnit, on a PHP/Laravel pilot codebase</div>
+      <div><b>Prototype</b><a href="https://ai-regression-sentinel.vercel.app/" target="_blank" rel="noopener">ai-regression-sentinel.vercel.app</a></div>
+      <div><b>Watch it run</b><a href="https://drive.google.com/file/d/1w138cbcmnav3ec4Tpv7MeVlnliqIiGua/view?usp=drive_link" target="_blank" rel="noopener">Video walkthrough →</a></div>
+      <div><b>Source</b><a href="https://github.com/natasha-codehub/ai-regression-sentinel" target="_blank" rel="noopener">github.com/natasha-codehub/ai-regression-sentinel</a></div>
+    </div>
+  </section>
+
+
+  <div class="ba-compare">
+    <div class="ba-col before">
+      <div class="ba-tag">Before</div>
+      <p>AI-generated tests nobody trusted: brittle coverage with no visibility into why the model wrote what it wrote.</p>
+    </div>
+    <div class="ba-arrow">→</div>
+    <div class="ba-col after">
+      <div class="ba-tag">After</div>
+      <p>A 6-agent pipeline with a self-evaluated test confidence score and a 9-stage trace panel making the reasoning auditable.</p>
+    </div>
+  </div>
+
+  <figure class="case-figure" style="max-width:760px;">
+    <img src="../images/case-studies/regression-sentinel-ui.png" alt="Sentinel dashboard showing a completed bootstrap run: 4153 test intents ingested, 3891 PHP test files generated, all four pipeline stages passed">
+    <figcaption>The Bootstrap panel: 4,153 test intents in, 3,891 PHP tests out, every stage auditable</figcaption>
+  </figure>
+
+  <div class="ledger">
+
+    <div class="ledger-block">
+      <div class="ledger-label">01 · The Surface Ask</div>
+      <h3>Test maintenance is the slowest part of the SDLC</h3>
+      <p>As codebases grow, manual test maintenance becomes the slowest part of the software development lifecycle. Existing tools generate tests, but don't understand intent, they produce brittle, low-confidence coverage that developers don't actually trust.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">02 · What Made It Hard</div>
+      <h3>Generating a test is easy. Generating a trustworthy one isn't</h3>
+      <p class="pull">AI-generated tests without confidence scoring create noise. A PM or QA lead reviewing AI-generated tests needs to see why the AI wrote what it wrote, not just the output.</p>
+      <p>The hard part wasn't producing test code, it was producing test code a team could trust without re-reviewing everything by hand, and keeping that trust intact as the codebase kept changing underneath it.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">03 · The Decision</div>
+      <h3>Six agents, each doing one job, all auditable</h3>
+      <p>Sentinel is a 6-agent pipeline: Ingestion parses the regression suite and extracts test intents, Reconciliation maps those intents to the actual code under test, Generation writes tests from intent plus code context, Evaluation scores each generated test for correctness and intent fidelity, Change Impact identifies which tests a code diff affects, and Test Update rewrites affected tests and produces a PR comment explaining what changed and why.</p>
+      <p>The north-star metric is a test confidence score, the percentage of generated tests that correctly capture the original behavioral intent, evaluated by the AI itself in a self-evaluation loop. That evaluation agent exists specifically to filter low-quality output before it reaches a developer.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">04 · The Trade-off I Owned</div>
+      <h3>Trust over opacity, everywhere in the UI</h3>
+      <p>I chose to expose agent traces in the UI rather than hide the pipeline behind a clean but opaque result. The Trace panel is a 9-stage vertical timeline making the reasoning auditable, not just the output, which costs UI complexity but is the reason a QA lead would ever actually adopt this over trusting it blindly. Once bootstrapped, Sentinel runs in a steady state: monitoring diffs, re-evaluating affected coverage, and proposing test updates before a PR merges, so the suite stays in sync with the codebase automatically instead of drifting.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">05 · The Result</div>
+      <h3>A pattern that generalizes past PHP</h3>
+      <div class="result-banner">
+        <div class="lbl">Design decision</div>
+        <div class="val">The agent framework is language-agnostic; PHPUnit is just the target format for this demo, chosen because the pilot use case was a PHP/Laravel enterprise codebase.</div>
+      </div>
+      <p style="margin-top:20px;">Deployed to Vercel with auto-deploy from its GitHub repo, three UI panels (Bootstrap, Steady-State, Trace) shipped end to end. The bigger result is a reusable stance on AI-generated engineering artifacts: never ship a confident-sounding output without a visible reason to trust it.</p>
+    </div>
+
+  </div>
+
+    <div class="related-work">
+    <div class="related-work-label">You might also like</div>
+    <div class="related-grid" data-related-work></div>
+  </div>
+
+<div class="case-cta">
+    <h3>Like what you see?</h3>
+    <p>I'm looking for Senior AI Product Manager roles where the product ships to people who depend on it.</p>
+    <a class="btn primary" href="../contact.html">Let's talk →</a>
+  </div>
+
+  <div class="case-nav">
+    <a href="ai-onboarding-agent.html">← AI Onboarding Agent</a>
+    <a class="next" href="behavioral-health-rag.html">Next: Behavioral Health RAG →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h2>If the stakes are real, let's talk.</h2>
+      <p>Open to Senior AI Product Manager roles where the product ships to people who depend on it.</p>
+      <div class="footer-links">
+        <a href="../about.html">About</a>
+        <a href="../books.html">Books</a>
+        <a href="../testimonials.html">Testimonials</a>
+        <a href="../contact.html">Contact</a>
+        <a href="mailto:natasha.agarwal.254@gmail.com">Email</a>
+        <a href="http://www.linkedin.com/in/natasha1agarwal" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://drive.google.com/file/d/16q6CAsI4wkckho32H79r2ci5qpHesmND/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-meta">NATASHA AGARWAL · PRODUCT, BUILT AND MEASURED</div>
+</footer>
+
+<script src="../js/showcase.js"></script>
+</body>
+</html>

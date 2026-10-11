@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Support Deflection Agent | Natasha Agarwal</title>
+<meta name="description" content="When do you invest in AI deflection vs. better routing to a human? A prototype built to answer that for a B2B client with 40,000+ customers.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-case-id="support-deflection-agent">
+
+<header>
+  <div class="name"><a href="../index.html" style="text-decoration:none;color:inherit;">NATASHA AGARWAL<span class="dot">.</span></a></div>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../index.html#how-i-work">How I Work</a>
+    <a href="../index.html#agents">Agents</a>
+    <a href="../about.html">About</a>
+    <a class="nav-cta" href="../contact.html">Let's Talk</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <a class="back-link" href="../index.html#work">← All work</a>
+
+  <section class="case-hero">
+    <div class="case-tag">Industrial B2B · Prototype</div>
+    <h1 class="case-title">Support Deflection Agent</h1>
+    <p class="case-dek">When do you invest in AI deflection vs. better routing to a human? Built to answer that for a client with 40,000+ customers.</p>
+
+    <div class="case-meta">
+      <div><b>Timeframe</b>~2 week POC</div>
+      <div><b>Tools</b>n8n · Gemini 2.0 Flash · RAG</div>
+      <div><b>Prototype</b><a href="https://support-deflection-agent-aoceztne0.vercel.app" target="_blank" rel="noopener">support-deflection-agent-aoceztne0.vercel.app</a></div>
+    </div>
+  </section>
+
+
+  <div class="ba-compare">
+    <div class="ba-col before">
+      <div class="ba-tag">Before</div>
+      <p>A rules-based intent system that broke on multi-part questions, ambiguous references, and every new policy edge case.</p>
+    </div>
+    <div class="ba-arrow">→</div>
+    <div class="ba-col after">
+      <div class="ba-tag">After</div>
+      <p>RAG grounded in the knowledge base with three confidence tiers instead of a binary answer/escalate switch. ~75% L1 deflection.</p>
+    </div>
+  </div>
+
+  <figure class="case-figure" style="max-width:760px;">
+    <img src="../images/case-studies/support-deflection-hero.png" alt="Support agents at workstations handling customer calls">
+    <figcaption>40,000+ customers, repetitive L1 queries, and a support team spending its day on questions that shouldn't have needed a human</figcaption>
+  </figure>
+
+  <div class="ledger">
+
+    <div class="ledger-block">
+      <div class="ledger-label">01 · The Surface Ask</div>
+      <h3>40,000+ customers, and every question sounded automatable</h3>
+      <p>The client was a large B2B industrial gas aggregator serving 40,000+ customers across the US. Support was overloaded with repetitive L1 queries: where's my order, I was billed for 10 cylinders but only received 8, can you send a POD for this invoice, is my tax exemption still valid. None of these were technically difficult. The issue was scale, agents were spending huge amounts of time manually checking the same categories of question every day.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">02 · What Made It Hard</div>
+      <h3>The chatbot instinct breaks fast in B2B</h3>
+      <p>Connect an LLM to FAQs and ship it, that would have failed quickly. Customers weren't asking general questions, they wanted answers tied to their account, their location, their order. A generic answer to "where is my order?" loses trust immediately and the customer contacts support anyway.</p>
+      <p class="pull">In consumer apps, hallucination is annoying. In B2B support, hallucinating invoice details or order status creates billing disputes. The system needed to know when not to answer.</p>
+      <p>My first instinct, a rules-based intent system, broke down on multiple-things-in-one-query, ambiguous references like "my last delivery," and policy edge cases. Every new variation meant updating logic by hand. Even "deflection rate" needed a definition before I could build anything: AI responded without escalation, customer didn't contact support afterward, or customer explicitly marked it resolved are three different metrics that optimize the system differently. I used the strictest for the POC: session resolved without escalation.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">03 · The Decision</div>
+      <h3>RAG over rules, and confidence as a spectrum, not a switch</h3>
+      <p>The biggest decision was moving away from rule-based flows and grounding responses through RAG. The upfront knowledge-base work was heavier, but it scaled with semantic variation instead of breaking on it. I also split the architecture in two: RAG for policy and process questions, direct tool or API calls for structured data lookups like order status. That separation simplified everything downstream.</p>
+      <p>A binary answer-or-escalate model wasn't flexible enough. Some lower-confidence answers were fine for a lightweight FAQ but not for a billing dispute. I implemented three confidence tiers instead: high gets a direct answer, medium answers with a disclaimer, low escalates to a human, with the thresholds configurable rather than hardcoded.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">04 · The Trade-off I Owned</div>
+      <h3>Mocked the OMS, kept the AI interaction model real</h3>
+      <p>For the POC, order data was mocked in Google Sheets instead of integrating directly with the real order management system. The goal at that stage was validating whether the AI interaction model worked, not spending weeks on enterprise integrations before proving value, and I was upfront with stakeholders that the demo environment was cleaner than production reality. Session memory was similarly lightweight, in-memory rather than persistent, good enough for a fast-moving prototype.</p>
+      <p>What I underestimated: knowledge-base quality mattered more than the model itself. Weak or vague documentation collapsed retrieval quality fast, and I ended up spending more time refining KB content and chunking strategy than integrating the LLM. That turned out to be the right place to spend the time.</p>
+    </div>
+
+    <div class="ledger-block">
+      <div class="ledger-label">05 · The Result</div>
+      <h3>~75% deflection, and a roadmap made of its own failures</h3>
+      <div class="result-banner">
+        <div class="lbl">Impact</div>
+        <div class="val">~75% L1 deflection rate with sub-2-second responses, from a ~2-week proof of concept.</div>
+      </div>
+      <p style="margin-top:20px;">The three decisions that actually drove the number: defining deflection properly, choosing RAG over a brittle rule system, and treating confidence as configurable rather than fixed. One underrated metric for production: KB gap rate. Low-confidence escalations exposed entirely new support patterns, so the AI's failures became roadmap signal for what to document next.</p>
+    </div>
+
+  </div>
+
+    <div class="related-work">
+    <div class="related-work-label">You might also like</div>
+    <div class="related-grid" data-related-work></div>
+  </div>
+
+<div class="case-cta">
+    <h3>Like what you see?</h3>
+    <p>I'm looking for Senior AI Product Manager roles where the product ships to people who depend on it.</p>
+    <a class="btn primary" href="../contact.html">Let's talk →</a>
+  </div>
+
+  <div class="case-nav">
+    <a href="invoice-automation.html">← Invoice Automation</a>
+    <a class="next" href="telemetry-forecasting.html">Next: Telemetry Forecasting →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h2>If the stakes are real, let's talk.</h2>
+      <p>Open to Senior AI Product Manager roles where the product ships to people who depend on it.</p>
+      <div class="footer-links">
+        <a href="../about.html">About</a>
+        <a href="../books.html">Books</a>
+        <a href="../testimonials.html">Testimonials</a>
+        <a href="../contact.html">Contact</a>
+        <a href="mailto:natasha.agarwal.254@gmail.com">Email</a>
+        <a href="http://www.linkedin.com/in/natasha1agarwal" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://drive.google.com/file/d/16q6CAsI4wkckho32H79r2ci5qpHesmND/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-meta">NATASHA AGARWAL · PRODUCT, BUILT AND MEASURED</div>
+</footer>
+
+<script src="../js/showcase.js"></script>
+</body>
+</html>
